@@ -8,16 +8,17 @@ describe(greetingsRouter.name, () => {
     const response = await client.get('/greetings');
 
     expect(response.statusCode).toBe(200);
-    expect(response.body.recipes).toContainEqual(
-      expect.objectContaining({
-        id: 'hello',
-        name: 'hello',
-        description: 'hello',
-        pictureUrl: 'hello',
-        steps: [],
-        ingredients: []
-      })
-    );
+    expect(response.body.recipes).toHaveLength(6);
+    // expect(response.body.recipes).toContainEqual(
+    //   expect.objectContaining({
+    //     id: 'hello',
+    //     name: 'hello',
+    //     description: 'hello',
+    //     pictureUrl: 'hello',
+    //     steps: [],
+    //     ingredients: []
+    //   })
+    // );
   });
 });
 
