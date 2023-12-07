@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type RecipeProps = {
+export type RecipeType = {
   id: string;
   name: string;
   description: string;
@@ -9,7 +9,7 @@ export type RecipeProps = {
   ingredients: string[];
 };
 
-export function Recipe({ name, pictureUrl, description }: RecipeProps) {
+export function Recipe({ name, pictureUrl, description }: RecipeType) {
   return (
     <div>
       <img src={pictureUrl} alt={`${name} recipe`} />
