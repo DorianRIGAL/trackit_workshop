@@ -1,7 +1,11 @@
 import RecipesList from './recipesList/recipesList';
 
 export function App() {
-  return <RecipesList />;
+  return (
+    <div>
+      <RecipesList />
+    </div>
+  );
 }
 
 export default App;
