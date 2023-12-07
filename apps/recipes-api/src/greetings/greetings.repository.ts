@@ -169,15 +169,6 @@ export class GreetingsRepositoryImpl {
   }
 
   async getGreetings(): Promise<RecipeDto[]> {
-    // return [{
-    //   id: 'hello',
-    //   name: 'hello',
-    //   description: 'hello',
-    //   pictureUrl: 'hello',
-    //   steps: [],
-    //   ingredients: []
-    // }];
-    // return [{ id: 'greet_1', label: 'Hi!' }];
     this._db.read();
     return this._db.data.recipes;
   }

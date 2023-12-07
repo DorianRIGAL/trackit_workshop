@@ -5,7 +5,7 @@ import { inject } from '../di';
 
 export const greetingsRouter = Router();
 
-greetingsRouter.get('/greetings', async (_, res) => {
+greetingsRouter.get('/recipes', async (_, res) => {
   const repo = inject(GREETINGS_REPOSITORY_TOKEN);
 
   const body: RecipesResponseDto = {

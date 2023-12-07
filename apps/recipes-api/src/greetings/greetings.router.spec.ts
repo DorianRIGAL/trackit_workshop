@@ -5,7 +5,7 @@ describe(greetingsRouter.name, () => {
   it('should say hi', async () => {
     const { client } = setUp();
 
-    const response = await client.get('/greetings');
+    const response = await client.get('/recipes');
 
     expect(response.statusCode).toBe(200);
     expect(response.body.recipes).toHaveLength(6);
