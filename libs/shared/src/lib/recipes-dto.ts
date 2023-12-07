@@ -8,5 +8,5 @@ export type RecipeDto = {
 };
 
 export type RecipesResponseDto = {
-  items: RecipeDto[];
+  recipes: RecipeDto[];
 };

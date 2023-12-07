@@ -1,10 +1,11 @@
 import { JSONSyncPreset } from 'lowdb/node';
 import { delay } from 'tsyringe';
 
-import { Greeting } from './greeting';
+import { RecipeDto } from './recipe';
+
 
 export interface GreetingsRepository {
-  getGreetings(): Promise<Greeting[]>;
+  getGreetings(): Promise<RecipeDto[]>;
 }
 
 export class GreetingsRepositoryImpl {
@@ -21,8 +22,16 @@ export class GreetingsRepositoryImpl {
     this._db.write();
   }
 
-  async getGreetings(): Promise<Greeting[]> {
-    return [{ id: 'greet_1', label: 'Hi!' }];
+  async getGreetings(): Promise<RecipeDto[]> {
+    return [{
+      id: 'hello',
+      name: 'hello',
+      description: 'hello',
+      pictureUrl: 'hello',
+      steps: [],
+      ingredients: []
+    }];
+    // return [{ id: 'greet_1', label: 'Hi!' }];
     // this._db.read();
     // return this._db.data.greetings;
   }
