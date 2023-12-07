@@ -20,7 +20,5 @@ describe(greetingsRouter.name, () => {
 });
 
 function setUp() {
-  const fakeRepo = new GreetingsRepositoryImpl();
-  register(GREETINGS_REPOSITORY_TOKEN, { useValue: fakeRepo });
   return createTestingClient(greetingsRouter);
 }
