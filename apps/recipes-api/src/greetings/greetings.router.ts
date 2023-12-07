@@ -14,3 +14,14 @@ greetingsRouter.get('/greetings', async (_, res) => {
 
   res.send(body);
 });
+/*
+greetingsRouter.post('/greeting', async (req, res) => {
+  const repo = inject(GREETINGS_REPOSITORY_TOKEN);
+
+  const body: GreetingsResponseDto = {
+    items: await repo.addGreetingToMeal(),
+  };
+
+  res.send(body);
+});
+*/

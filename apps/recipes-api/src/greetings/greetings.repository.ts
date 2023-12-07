@@ -7,7 +7,7 @@ export interface GreetingsRepository {
   getGreetings(): Promise<Greeting[]>;
 }
 
-class GreetingsRepositoryImpl {
+export class GreetingsRepositoryImpl {
   private _db = JSONSyncPreset('greetings.db.json', {
     greetings: [
       {
@@ -22,8 +22,9 @@ class GreetingsRepositoryImpl {
   }
 
   async getGreetings(): Promise<Greeting[]> {
-    this._db.read();
-    return this._db.data.greetings;
+    return [{ id: 'greet_1', label: 'Hi!' }];
+    // this._db.read();
+    // return this._db.data.greetings;
   }
 }
 
