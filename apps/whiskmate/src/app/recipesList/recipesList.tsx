@@ -7,7 +7,7 @@ export function RecipesList() {
   const [keywords, setKeywords] = useState<string>('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/recipes')
+    fetch('http://localhost:3333/recipes')
       .then((data) => data.json())
       .then((data) => {
         setRecipes(data.recipes);
@@ -17,9 +17,15 @@ export function RecipesList() {
   return (
     <div>
       <SearchBar onChange={setKeywords} value={keywords} />
-      {recipes.map((recipe) => {
-        return <Recipe {...recipe} />;
-      })}
+      {recipes
+        .filter(
+          (recipe) =>
+            recipe.name.includes(keywords) ||
+            recipe.description.includes(keywords)
+        )
+        .map((recipe) => {
+          return <Recipe {...recipe} />;
+        })}
     </div>
   );
 }
