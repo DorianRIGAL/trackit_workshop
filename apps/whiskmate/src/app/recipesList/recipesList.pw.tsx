@@ -168,14 +168,14 @@ const fakeRecipes = {
 };
 
 test('Recipes list', async ({ page, mount }) => {
-  const component = await mount(<RecipesList />);
-
-  page.route('**/recipes', (route) =>
+  await page.route('**/recipes', (route) =>
     route.fulfill({
       status: 200,
       body: JSON.stringify(fakeRecipes),
     })
   );
+
+  const component = await mount(<RecipesList />);
 
   await Promise.all(
     fakeRecipes.recipes.map(async (recipe) => {
