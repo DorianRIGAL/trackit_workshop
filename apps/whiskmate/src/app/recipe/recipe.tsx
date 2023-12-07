@@ -1,6 +1,6 @@
 import React from 'react';
 
-type RecipeProps = {
+export type RecipeProps = {
   id: string;
   name: string;
   description: string;
