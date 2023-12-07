@@ -1,8 +1,5 @@
 import { greetingsRouter } from './greetings.router';
 import { createTestingClient } from '../testing/create-testing-client';
-import { register } from '../di';
-import { GREETINGS_REPOSITORY_TOKEN } from './greetings.repository';
-import { GreetingsRepositoryImpl } from './greetings.repository';
 
 describe(greetingsRouter.name, () => {
   it('should say hi', async () => {
