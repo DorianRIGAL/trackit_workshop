@@ -1,7 +1,7 @@
-import Greetings from './greetings/greetings';
+import RecipesList from './recipesList/recipesList';
 
 export function App() {
-  return <Greetings />;
+  return <RecipesList />;
 }
 
 export default App;
